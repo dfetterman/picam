@@ -9,7 +9,7 @@ feedlimit=.15
 if test `find "lastfeed.txt" -mmin +"$feedlimit"`
 then
     echo feeding the dogs > "$homedir"/lastfeed.txt
-echo script to drop food goes here
+echo Nom nom nom nom Thanks!
 echo 0=55 > /dev/servoblaster
 sleep 0.25
 echo 0=150 > /dev/servoblaster
@@ -29,7 +29,7 @@ sleep 0.25
 echo 0=190 > /dev/servoblaster
 
 else
-	echo too much food, can only feed every "$feedlimit" minutes.
+	echo Too much too soon, can only feed every "$feedlimit" minutes.
 
 #ls -lah lastfeed.txt | awk '{print \$8}'
 
