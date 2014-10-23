@@ -4,11 +4,17 @@
 homedir=/var/www
 
 #min time between treets being distributed
-feedlimit=15
+feedlimit=2
+
 
 if test `find "lastfeed.txt" -mmin +"$feedlimit"`
 then
-    echo feeding the dogs > "$homedir"/lastfeed.txt
+
+#compute total feeds
+currentfeedamt=$(cat lastfeed.txt)
+newfeedamt=$((currentfeedamt + 1 ))
+
+    echo "$newfeedamt" > "$homedir"/lastfeed.txt
 echo Nom nom nom nom Thanks!
 echo 0=55 > /dev/servoblaster
 sleep 0.25
@@ -28,6 +34,19 @@ echo 0=150 > /dev/servoblaster
 sleep 0.25
 echo 0=190 > /dev/servoblaster
 
+
+sleep 0.25
+echo 0=150 > /dev/servoblaster
+sleep 0.25
+echo 0=55 > /dev/servoblaster
+sleep 0.25
+echo 0=150 > /dev/servoblaster
+sleep 0.25
+echo 0=190 > /dev/servoblaster
+
+
+
+
 else
 	echo Too much too soon \<BR\>can only feed every "$feedlimit" minutes.
 
@@ -46,8 +65,6 @@ timetonextfeed=$(($feedlimit - $mins))
 echo Try again in "$timetonextfeed" min.
 
 
-
-#echo `find "lastfeed.txt"`
 
 fi
 
