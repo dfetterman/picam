@@ -4,7 +4,7 @@
 homedir=/var/www
 
 #min time between treets being distributed
-feedlimit=.25
+feedlimit=0.25
 
 
 if test `find "lastfeed.txt" -mmin +"$feedlimit"`
@@ -18,13 +18,13 @@ newfeedamt=$((currentfeedamt + 1 ))
 echo Nom nom nom nom Thanks! \<BR\> Feeding \#"$newfeedamt".
 echo 0=55 > /dev/servoblaster
 sleep 0.05
-echo 0=200 > /dev/servoblaster
+echo 0=215 > /dev/servoblaster
 sleep 0.85
 echo 0=50 > /dev/servoblaster
-sleep 0.85
-echo 0=200 > /dev/servoblaster
-sleep 0.85
-echo 0=55 > /dev/servoblaster
+#sleep 0.85
+#echo 0=215 > /dev/servoblaster
+#sleep 0.85
+#echo 0=55 > /dev/servoblaster
 
 
 
