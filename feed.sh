@@ -4,7 +4,7 @@
 homedir=/var/www
 
 #min time between treets being distributed
-feedlimit=0.25
+feedlimit=.30
 
 
 if test `find "lastfeed.txt" -mmin +"$feedlimit"`
