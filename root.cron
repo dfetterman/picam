@@ -1,0 +1,5 @@
+#reboot at specific time
+2 6,11,15,18 * * * /sbin/shutdown -r +1
+
+#start camera after reboot
+@reboot /home/pi/mjpg-streamer/mjpg-streamer.sh start
